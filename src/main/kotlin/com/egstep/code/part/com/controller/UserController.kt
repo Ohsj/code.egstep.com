@@ -1,6 +1,7 @@
 package com.egstep.code.part.com.controller
 
 import com.egstep.code.entity.ComUserMst
+import com.egstep.code.part.com.dto.GetUserIn
 import com.egstep.code.part.com.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,8 +15,8 @@ class UserController {
     @Autowired lateinit var service: UserService
 
     @GetMapping
-    fun getUsers(): List<ComUserMst> {
-        return service.getUsers()
+    fun getUsers(input: GetUserIn): List<ComUserMst> {
+        return service.getUsers(input)
     }
 
 }
