@@ -72,8 +72,12 @@ source "/root/.sdkman/bin/sdkman-init.sh"
 sdk install java 8.0.282.j9-adpt
 
 
-### Jenkins Job
+### Execute command
+java -jar  \
+-Dspring.profiles.active=dev,secret \
+-Dspring.config.location=/root/app/ \
+code-0.0.1-SNAPSHOT.jar
 
-### Build
-
-### Deploy
+export SPRING_PROFILES_ACTIVE=dev,secret
+export SPRING_CONFIG_LOCATION=file:///root/app/
+java -jar code-0.0.1-SNAPSHOT.jar
